@@ -1,40 +1,40 @@
-# Random Name Generator
+# Générateur de Noms Aléatoires
 
-A Python-based random name generator that uses weighted probabilities for realistic phonetic results and includes a multi-threaded mini-game.
+Un générateur de noms aléatoires basé sur Python qui utilise des probabilités pondérées pour des résultats phonétiques réalistes et inclut un mini-jeu multi-thread.
 
-## Features
+## Fonctionnalités
 
-- **Weighted Generation**: The first two letters of each name are generated based on language frequency weights (e.g., 'a' is more frequent than 'y').
-- **Phonetic Logic**: Automatically alternates between vowels and consonants to create readable names.
-- **Multi-threaded Mini-Game**: Includes a "Crack the Name" game where multiple threads compete to brute-force a target name.
-- **Interactive CLI**: Simple menu-driven interface.
+- **Génération Pondérée** : Les deux premières lettres de chaque nom sont générées en fonction de poids de fréquence linguistique (par exemple, 'a' est plus fréquent que 'y').
+- **Logique Phonétique** : Alterne automatiquement entre voyelles et consonnes pour créer des noms lisibles.
+- **Mini-Jeu Multi-thread** : Comprend un jeu "Trouver le nom" où plusieurs threads s'affrontent pour trouver un nom cible par force brute.
+- **CLI Interactive** : Interface simple pilotée par menu.
 
-## Requirements
+## Prérequis
 
 - Python 3.x
 
-## Usage
+## Utilisation
 
-Run the generator directly from your terminal:
+Lancez le générateur directement depuis votre terminal :
 
 ```bash
 python generator.py
 ```
 
-### Menu Options
+### Options du Menu
 
-1. **Générer 5 noms aléatoires**: Instantly generates 5 names following the phonetic rules.
-2. **Mini-Jeu : Trouver mon nom**: Enter a name, and the script will launch 4 parallel threads to try and generate that exact name, showing real-time attempts.
-3. **Quitter**: Exit the application.
+1. **Générer 5 noms aléatoires** : Génère instantanément 5 noms en suivant les règles phonétiques.
+2. **Mini-Jeu : Trouver mon nom** : Entrez un nom, et le script lancera 4 threads en parallèle pour tenter de générer ce nom exact, en affichant les tentatives en temps réel.
+3. **Quitter** : Quitte l'application.
 
-## How it Works
+## Fonctionnement
 
-### Name Generation logic
-The script uses a weighted system for the start of the name to avoid awkward combinations. It then alternates vowels and consonants. There is a 75% chance that a name ends with a vowel, and the starting letter (vowel or consonant) is calculated to respect this preference based on the desired name length.
+### Logique de génération de noms
+Le script utilise un système de pondération pour le début du nom afin d'éviter les combinaisons étranges. Il alterne ensuite voyelles et consonnes. Il y a 75 % de chances qu'un nom se termine par une voyelle, et la lettre de départ (voyelle ou consonne) est calculée pour respecter cette préférence en fonction de la longueur de nom souhaitée.
 
 ### Multi-threading
-The mini-game uses `concurrent.futures.ThreadPoolExecutor` to run 4 workers. Each worker generates names as fast as possible until one of them hits the target.
+Le mini-jeu utilise `concurrent.futures.ThreadPoolExecutor` pour exécuter 4 workers. Chaque worker génère des noms aussi vite que possible jusqu'à ce que l'un d'entre eux atteigne la cible.
 
-## License
+## Licence
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
